@@ -1,0 +1,38 @@
+package Tugas;
+
+import java.util.Scanner;
+
+public class alpro2 {
+	public static void main(String[] args) {
+		int total, diskon = 0, bayar;
+		String member;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Apakah Anda mempunyai kartu member? (ya atau tidak)");
+		member = scan.nextLine();
+		System.out.print("Total harga barang belanjaan = Rp");
+		total = scan.nextInt();
+		
+		if (member.equals ("ya")) {
+			if (total > 500000) {
+				diskon = 100000;
+			} else if (total <= 500000 && total >= 200000) {
+				diskon = 50000;
+			} else {
+				diskon = 0;
+			}
+		} else {
+			if (total > 500000) {
+				diskon = 25000;
+			} else if (total <= 500000 && total >= 200000) {
+				diskon = 10000;
+			} else {
+				diskon = 0;
+			}
+		}
+	
+		bayar = total - diskon;
+		System.out.println("Total yang harus dibayar = Rp" + bayar);
+	}
+}
